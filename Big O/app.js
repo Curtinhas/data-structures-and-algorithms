@@ -1,5 +1,7 @@
-function outPut(string){
-  return string
+function longItems(n){
+  for(let i = 0; i < n; i++){
+    console.log(i);
+  }
 }
 
-console.log(outPut("Hello"))
+longItems(10);
