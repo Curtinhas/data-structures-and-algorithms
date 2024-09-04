@@ -23,7 +23,7 @@ class Node {
 
 // const newNode = new Node(4);
 
-class linkedList {
+class LinkedList {
   constructor(value) {
     const newNode = new Node(value);
     this.head = newNode;
@@ -32,5 +32,5 @@ class linkedList {
   }
 }
 
-let myLinkedList = new linkedList(4);
+let myLinkedList = new LinkedList(4);
 console.log(myLinkedList)
