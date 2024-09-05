@@ -41,28 +41,42 @@ class LinkedList {
     this.length++;
     return this;
   }
-  pop(){
-     if(!this.head) return undefined;
-     let temp = this.head;
-     let pre = temp;
+  pop() {
+    if (!this.head) return undefined;
+    let temp = this.head;
+    let pre = temp;
 
-     while(temp.next){
-          pre = temp;
-          temp= temp.next;
-     }
-     this.tail = pre;
-     this.tail.next = null;
-     this.length--;
-     if(this.length === 0){
-          this.head = null;
-          this.tail = null;
-     }
-     return temp;
+    while (temp.next) {
+      pre = temp;
+      temp = temp.next;
+    }
+    this.tail = pre;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return temp;
   }
-  
+
+  unshift(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 let myLinkedList = new LinkedList(4);
 myLinkedList.push(7);
-myLinkedList.pop()
+myLinkedList.push(3);
+myLinkedList.unshift(6)
 console.log(myLinkedList);
